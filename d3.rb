@@ -17,7 +17,7 @@ class D3 < Formula
   end
 
   test do
-    system "#{bin}/d3", "--version"
+    system "#{bin}/d3", "--verbose",  "--version"
   end
 end
 
