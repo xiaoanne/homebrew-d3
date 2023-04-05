@@ -25,8 +25,8 @@ jobs:
           mkdir -p artifacts
           ls -ll
           gh release create v1.0.0 --repo ${{ github.repository }} --generate-notes
-          gh release upload v1.0.0 kinetik-cli.bottle.tar.gz --repo myuser/myrepo
-          mv kinetik-cli.bottle.tar.gz artifacts/ # Move the generated bottle files to an artifacts directory
+          gh release upload v1.0.0 kinetik-cli--0.13.5.arm64_monterey.bottle.tar.gz --repo ${{ github.repository }}
+          mv kinetik-cli--0.13.5.arm64_monterey.bottle.tar.gz artifacts/ # Move the generated bottle files to an artifacts directory
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v2
