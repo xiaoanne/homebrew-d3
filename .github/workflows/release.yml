@@ -19,11 +19,12 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Create release and tag
-        env:
-          GH_TOKEN: ${{ github.token }}
+#        env:
+#          GH_TOKEN: ${{ github.token }}
         run: |
           mkdir -p artifacts
-          mv *.bottle*.tar.gz artifacts/ # Move the generated bottle files to an artifacts directory
+          ls -ll
+          mv "*.bottle*.tar.gz" artifacts/ # Move the generated bottle files to an artifacts directory
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v2
