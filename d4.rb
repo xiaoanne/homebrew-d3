@@ -21,3 +21,20 @@ class D4 < Formula
     system "#{bin}/d4", "--version"
   end
 end
+
+class Example < Formula
+  desc "Example formula for downloading and installing an executable"
+  homepage "https://example.com"
+  url "https://example.com/download/example"
+  sha256 "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef"
+
+  def install
+    # Move the executable to the bin folder
+    bin.install "example"
+  end
+
+  test do
+    # Test the installed executable
+    system "#{bin}/example", "--version"
+  end
+end
