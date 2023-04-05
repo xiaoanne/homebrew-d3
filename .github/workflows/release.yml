@@ -24,8 +24,8 @@ jobs:
         run: |
           mkdir -p artifacts
           ls -ll
-          gh release delete v1.0.0
-          gh repo delete v1.0.0
+          gh release delete v1.0.0 --yes
+          gh repo delete v1.0.0 --yes
           gh release create v1.0.0 --repo ${{ github.repository }} --generate-notes
           gh release upload v1.0.0 kinetik-cli--0.13.5.arm64_monterey.bottle.tar.gz --repo ${{ github.repository }}
           mv kinetik-cli--0.13.5.arm64_monterey.bottle.tar.gz artifacts/ # Move the generated bottle files to an artifacts directory
