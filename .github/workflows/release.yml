@@ -19,12 +19,14 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Create release and tag
-#        env:
-#          GH_TOKEN: ${{ github.token }}
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
           mkdir -p artifacts
           ls -ll
-          mv "*.bottle*.tar.gz" artifacts/ # Move the generated bottle files to an artifacts directory
+          gh release create v1.0.0 --repo ${{ github.repository }} --generate-notes
+          gh release upload v1.0.0 kinetik-cli.bottle.tar.gz --repo myuser/myrepo
+          mv kinetik-cli.bottle.tar.gz artifacts/ # Move the generated bottle files to an artifacts directory
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v2
