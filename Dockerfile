@@ -1,2 +1,2 @@
 FROM ubuntu:latest
-COPY ./bin/kinetik-main-x86_64-apple-darwin .
+COPY ./kinetik-cli--0.13.5.arm64_monterey.bottle.tar.gz .
