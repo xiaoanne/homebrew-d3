@@ -1,9 +1,9 @@
 class KinetikCli < Formula
   desc "KinetikCli"
-  homepage "https://github.com/section6nz/kinetik-base"
+  homepage "https://github.com/xiaoanne/homebrew-d3"
   version "0.13.5"
   if Hardware::CPU.arm?
-    url "file:///Users/annewang/Downloads/homebrew-d3/bin/kinetik-main-aarch64-apple-darwin"
+    url "https://ghcr.io/xiaoanne/homebrew-d3/kinetik-cli:latest"
     sha256 "8a7a2297d9700747c4d88e2eea9ad349c92ed89aa1c65de27ab088e8d1718650"
   else
     url "file:///Users/annewang/Downloads/homebrew-d3/bin/kinetik-main-x86_64-apple-darwin"
