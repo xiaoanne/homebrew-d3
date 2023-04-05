@@ -18,21 +18,21 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Install GitVersion
+        uses: gittools/actions/gitversion/setup@v0.9.7
+        with:
+          versionSpec: '5.x'
+
+      - name: Determine Version
+        id: get_semver
+        uses: gittools/actions/gitversion/execute@v0.9.7
+
       - name: Create release and tag
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          mkdir -p artifacts
-          ls -ll
-#          gh release delete v1.0.0 --yes
-          gh release create v1.0.0 --repo ${{ github.repository }} --generate-notes
-          gh release upload v1.0.0 kinetik-cli--0.13.5.arm64_monterey.bottle.tar.gz --repo ${{ github.repository }}
-#          mv kinetik-cli--0.13.5.arm64_monterey.bottle.tar.gz artifacts/ # Move the generated bottle files to an artifacts directory
-
-      - name: Upload artifacts
-        uses: actions/upload-artifact@v2
-        with:
-          name: bottles
-          path: artifacts/
-#          gh release create v1.0.0 --repo ${{ github.repository }} --generate-notes
-#          gh release upload v1.0.0 kinetik-cli.bottle.tar.gz --repo myuser/myrepo
+          gh release create v$env:GITVERSION_SEMVER --repo ${{ github.repository }} --generate-notes
+          gh release upload v$env:GITVERSION_SEMVER kinetik-cli--0.13.5.arm64_monterey.bottle.tar.gz --repo ${{ github.repository }}

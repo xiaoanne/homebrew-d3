@@ -1,0 +1,8 @@
+mode: ContinuousDeployment
+major-version-bump-message: '\bBREAKING CHANGE\b|(.!: *)'
+minor-version-bump-message: '^\bfeat\b'
+patch-version-bump-message: '^\bfix\b'
+branches:
+  main:
+    mode: ContinuousDelivery
+    increment: None
