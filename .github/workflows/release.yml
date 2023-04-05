@@ -36,3 +36,4 @@ jobs:
         run: |
           gh release create v$GITVERSION_SEMVER --repo ${{ github.repository }} --generate-notes
           gh release upload v$GITVERSION_SEMVER kinetik-cli--0.13.5.arm64_monterey.bottle.tar.gz --repo ${{ github.repository }}
+          gh pkg create --owner ${{ github.actor }} --repo ${{ github.repository }} --tag v$GITVERSION_SEMVER --file kinetik-cli--0.13.5.arm64_monterey.bottle.tar.gz
