@@ -5,8 +5,9 @@ class Kinetik < Formula
   license "section6nz"
   head "https://github.com/xiaoanne/homebrew-d3", branch: "main"
   if Hardware::CPU.arm?
-    url "https://github.com/xiaoanne/homebrew-d3/releases/download/v1.0.6/kinetik--0.13.5.arm64_monterey.bottle.tar.gz"
-    sha256 "04f71a4e4f736d7247a934740e91a199111c52522ce5c12854e688edfa154296"
+    url "https://github.com/xiaoanne/homebrew-d3/releases/download/v1.0.7/kinetik--0.13.5.arm64_monterey.bottle.tar.gz"
+    # url "file://#{Tap.fetch("homebrew", "test-bot").formula_dir}/t/tarballs/testbottest-0.1.tbz"
+    sha256 "ef901473181d1f5c638bf613b54b09ea69e65a6bbaccd2c25e30de25f669e40f"
   else
     url "https://github.com/xiaoanne/homebrew-d3/releases/download/v1.0.6/kinetik--0.13.5.x86_64_monterey.bottle.tar.gz"
     sha256 "1be3b6d1146641dc024f1d79e1e48eb3995eab300f126fe25f54fe8a5098c06e"
