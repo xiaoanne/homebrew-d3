@@ -19,7 +19,7 @@ class KinetikCli < Formula
       bin.install "0.13.5/bin/kinetik-main-x86_64-apple-darwin" => "kinetik"
     end
     chmod 0755, "#{bin}/kinetik"
-    system "xattr", "-dr", "com.apple.quarantine", "#{bin}/kinetik"
+#     system "xattr", "-dr", "com.apple.quarantine", "#{bin}/kinetik"
   end
 
   test do
