@@ -24,10 +24,8 @@ jobs:
           brew install --build-bottle kinetik-cli
           # brew bottle kinetik-cli
           # brew test-bot --only-formulae --root-url=https://ghcr.io/v2/xiaoanne/kinetik-cli
-          cd ./bottle
           brew test-bot --only-formulae --root-url=https://ghcr.io/v2/xiaoanne/d3/kinetik-cli xiaoanne/d3/kinetik-cli
           ls -R
-          cd .. 
 
       - name: Upload artifact
         uses: actions/upload-artifact@v2
@@ -36,7 +34,7 @@ jobs:
           path: |
             # /home/runner/work/homebrew-kinetik-cli/homebrew-kinetik-cli/bottle/kinetik-cli--0.13.5.arm64_monterey.bottle.1.tar.gz
             # /home/runner/work/homebrew-kinetik-cli/homebrew-kinetik-cli/bottle/kinetik-cli--0.13.5.x86_64_linux.bottle.1.tar.gz
-            /home/runner/work/homebrew-d3/homebrew-d3/bottle/
+            /home/runner/work/homebrew-d3/homebrew-d3/
             # /home/runner/work/homebrew-kinetik-cli/homebrew-kinetik-cli/kinetik-cli--0.13.5.x86_64_linux.bottle.1.tar.gz
 
       - name: Download Artifact
