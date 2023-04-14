@@ -21,7 +21,7 @@ jobs:
           ls -R
           pwd
           brew tap xiaoanne/d3
-          brew install --build-bottle d3/kinetik-cli
+          brew install --build-bottle kinetik-cli
           # brew bottle kinetik-cli
           # brew test-bot --only-formulae --root-url=https://ghcr.io/v2/xiaoanne/kinetik-cli
           brew test-bot --only-formulae --root-url=https://ghcr.io/v2/xiaoanne/d3 ./Formula/kinetik-cli.rb
