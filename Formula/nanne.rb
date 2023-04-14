@@ -1,5 +1,5 @@
-class KinetikCli < Formula
-  desc "KinetikCli"
+class a < Formula
+  desc "a"
   homepage "https://github.com/section6nz/kinetik-base"
   version "0.13.5"
   if Hardware::CPU.arm?

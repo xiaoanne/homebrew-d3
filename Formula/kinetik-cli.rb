@@ -1,5 +1,5 @@
 class KinetikCli < Formula
-  desc "Kinetik"
+  desc "Kinetik-cli"
   homepage "https://github.com/xiaoanne/homebrew-d3"
   version "0.13.5"
   license "section6nz"
